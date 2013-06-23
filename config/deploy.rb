@@ -1,5 +1,5 @@
 set :application, "ourscal"
-#set :repository,  "set your repository location here"
+set :repository,  "git@github.com:lancetw/ourscal.git"
 
 ssh_options[:keys] = [
         File.join(ENV["HOME"], ".ssh", "id_rsa")
