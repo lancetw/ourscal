@@ -18,6 +18,11 @@ set :user, "root"
 set :deploy_to, "/home/deliverwork/public_html/ourscal"
 set :deploy_via, :remote_cache
 set :use_sudo, false
+set :deploy_env, "production"
+set :rails_env, "production"
+set :scm, :git
+set :branch, "master"
+set :scm_verbose, true
 
 # if you want to clean up old releases on each deploy uncomment this:
 after "deploy:restart", "deploy:cleanup"
