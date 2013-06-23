@@ -46,5 +46,7 @@ gem 'jbuilder', '~> 1.0.1'
 # Deploy with Capistrano
 gem 'capistrano', group: :development
 
+gem "bcrypt-ruby", group: :production
+
 # To use debugger
 # gem 'debugger'
