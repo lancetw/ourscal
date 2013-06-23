@@ -2,7 +2,8 @@ set :application, "ourscal"
 set :repository,  "git@github.com:lancetw/ourscal.git"
 
 ssh_options[:keys] = [
-        File.join(ENV["HOME"], ".ssh", "id_rsa")
+        File.join(ENV["HOME"], ".ssh", "id_rsa"),
+        File.join(ENV["HOME"], ".ssh", "github_rsa")
     ]
 
 ssh_options[:forward_agent] = true
@@ -15,7 +16,7 @@ role :db,  "deliverwork.com", :primary => true # This is where Rails migrations 
 role :db,  "deliverwork.com"
 
 set :user, "root"
-set :deploy_to, "/home/deliverwork/public_html/ourscal"
+set :deploy_to, "/home/deliverwork/ourscal"
 set :deploy_via, :remote_cache
 set :use_sudo, false
 set :deploy_env, "production"
