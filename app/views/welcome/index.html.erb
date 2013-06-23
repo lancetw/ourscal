@@ -1,0 +1,76 @@
+<div class="container">
+
+
+  <div class="container-box">
+
+
+    <aside class="aside0">
+      #DELIVERWORK
+    </aside>
+
+    <article class="content">
+      <div class="cal-box">
+      <%= calendar @events, {:prev_text=>raw('<i class="icon-circle-arrow-left icon-large"></i>'), :next_text=>raw('<i class="icon-circle-arrow-right icon-large"></i>'), class: 'ourscal'} do |event| %>
+        <div><%= link_to event.title, event %></div>
+      <% end %>
+      </div>
+
+      <hr />
+    </article>
+
+    <aside class="aside1">
+      <h2>CLEAR WORKS <i class="icon-laptop icon-large"></i></h2>
+
+      <div class="clearfix"></div>
+      <div id="personal-work">
+        <div class="business-card-holder">
+          <div class="business-card" href="#balazs">
+            <h5>Hsin-lin Cheng</h5>
+            <div class="title">web developer</div>
+            <div class="email">lancetw@gmail.com</div>
+            <div class="links">
+              <i class="icon-facebook-sign icon-2x"></i>
+              <i class="icon-twitter-sign icon-2x"></i>
+              <i class="icon-google-plus-sign icon-2x"></i>
+              <i class="icon-github icon-2x"></i>
+            </div>
+            <figure><div class="personal-circle" style="background-image: url('/assets/icons/lancetw.jpg')"></div></figure>
+          </div>
+        </div>
+      </div>
+
+      <div id="helveti-list">
+        <h2>L.I.S.T</h2>
+        <ul>
+          <li><a href="#">倒垃圾</a></li>
+          <li><a href="#">繳手機費用</a></li>
+          <li><a href="#">看進擊的巨人#12</a></li>
+          <li><a href="#">期末掰掰趴 星期一</a></li>
+          <li><a href="#">測試</a></li>
+        </ul>
+      </div>
+
+    </aside>
+
+    <aside class="aside2">
+      <h2>Conversation <i class="icon-comments icon-large"></i></h2>
+
+      <div class="workshop-circle" style="background-image: url('/assets/icons/Fullmetal-Alchemist-256.png')"></div>
+      <div class="workshop-circle" style="background-image: url('/assets/icons/Hyouka-256.png')"></div>
+      <div class="workshop-circle" style="background-image: url('/assets/icons/One-Piece-anime-256.png')"></div>
+      <div class="workshop-circle" style="background-image: url('/assets/icons/Naruto-256.png')"></div>
+      <div class="workshop-circle" style="background-image: url('/assets/icons/BLEACH-anime-256.png')"></div>
+      <div class="workshop-circle" style="background-image: url('/assets/icons/Amnesia-anime-256.png')"></div>
+
+    </aside>
+  </div>
+  <footer class="footer1">
+    <h1>Ourscal <small>A Social Calendar Only what You Want</small></h1>
+  </footer>
+  <footer class="footer2">
+    <p>Developer = lancetw aka Hsin-lin Cheng &lt;lancetw@gmail.com&gt;</p>
+    <p>DELIVERWORK @ 2013_Summer</p>
+  </footer>
+
+
+</div>

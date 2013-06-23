@@ -1,0 +1,150 @@
+.business-card-holder {
+	position: relative;
+	width: 200px;
+	margin: 24px auto;
+	padding: 5px;
+	overflow: hidden;
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+	-webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.business-card-holder:hover {
+	width: 255px;
+	transform: rotate(-10deg);
+	-moz-transform: rotate(-10deg);
+	-webkit-transform: rotate(-10deg);
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+	-webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.business-card-holder::before,
+.business-card-holder::after {
+	display: block;
+	content: '';
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	background: #eee;
+	z-index: 1;
+
+	transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+	-webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.business-card-holder::before {
+	left: -20px;
+	top: -20px;
+}
+
+.business-card-holder::after {
+	right: -20px;
+	bottom: -20px;
+}
+
+/*	size matches 9 x 5cm @ 72dpi	*/
+.business-card {
+	display: block;
+	position: relative;
+	width: 255px;
+	height: 142px;
+
+	background: rgba(0, 0, 0, 0.2);
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-decoration: none;
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+	transform: skew(-2deg) rotate(-1deg);
+	-moz-transform: skew(-2deg) rotate(-1deg);
+	-webkit-transform: skew(-2deg) rotate(-1deg) scale(1);
+}
+
+.business-card::after {
+	display: block;
+	content: '';
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: -webkit-gradient(
+		linear,
+		right top,
+		left bottom,
+		color-stop(0, #f8f8f8),
+		color-stop(0.5, #fefefe),
+		color-stop(1, #f8f8f8)
+	);
+	background: -moz-linear-gradient(
+		right top,
+		#f8f8f8 0%,
+		#fefefe 50%,
+		#f8f8f8 100%
+	);
+
+	transform: skew(2deg) rotate(1deg);
+	-moz-transform: skew(2deg) rotate(1deg);
+	-webkit-transform: skew(2deg) rotate(1deg) scale(1);
+}
+
+.business-card > * {
+	position: relative;
+	width: 211px;
+	transform: skew(2deg) rotate(1deg);
+	-moz-transform: skew(2deg) rotate(1deg);
+	-webkit-transform: skew(2deg) rotate(1deg);
+	z-index: 20;
+}
+
+.business-card h5 {
+	margin: 0;
+	padding: 20px 0 12px;
+	font-size: 24px;
+	text-align: center;
+	text-shadow: 0px 1px 2px #ddd;
+}
+
+.business-card > div {
+	text-indent: 20px;
+}
+
+.business-card > div > i {
+	line-height: 50px;
+	text-indent: 5px;
+}
+
+.business-card figure {
+	position: absolute;
+	height: 100%;
+	right: 12px;
+	top: 35px;
+	width: 44px;
+}
+
+.business-card .title {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.business-card .email {
+	color: #669933;
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+	.business-card-holder {
+		width: 255px;
+	}
+}
+
+@media (max-width: 767px) {
+	.business-card-holder {
+		width: 255px;
+	}
+}
