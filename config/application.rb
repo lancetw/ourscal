@@ -10,6 +10,7 @@ module Ourscal
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
     config.i18n.default_locale = "zh-TW"
     config.time_zone = "Taipei"
+    config.assets.initialize_on_precompile = false
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

@@ -9,17 +9,17 @@
     </aside>
 
     <article class="content">
+
       <div class="cal-box">
       <%= calendar @events, {:prev_text=>raw('<i class="icon-circle-arrow-left icon-large"></i>'), :next_text=>raw('<i class="icon-circle-arrow-right icon-large"></i>'), class: 'ourscal'} do |event| %>
         <div><%= link_to event.title, event %></div>
       <% end %>
       </div>
 
-      <hr />
     </article>
 
     <aside class="aside1">
-      <h2>CLEAR WORKS <i class="icon-laptop icon-large"></i></h2>
+      <h2><i class="icon-laptop icon-large"></i>WHOAMI</h2>
 
       <div class="clearfix"></div>
       <div id="personal-work">
@@ -34,42 +34,49 @@
               <i class="icon-google-plus-sign icon-2x"></i>
               <i class="icon-github icon-2x"></i>
             </div>
-            <figure><div class="personal-circle" style="background-image: url('/assets/icons/lancetw.jpg')"></div></figure>
+            <figure><div class="personal-circle" style="background-image: url('<%= asset_path("icons/lancetw.jpg") %>')"></div></figure>
           </div>
         </div>
       </div>
 
       <div id="helveti-list">
-        <h2>L.I.S.T</h2>
+        <h2>ACT@TODAY</h2>
         <ul>
-          <li><a href="#">倒垃圾</a></li>
-          <li><a href="#">繳手機費用</a></li>
-          <li><a href="#">看進擊的巨人#12</a></li>
-          <li><a href="#">期末掰掰趴 星期一</a></li>
-          <li><a href="#">測試</a></li>
+          <li><a href="#">處理bug#8763<div class="work-circle" style="background-image: url('<%= asset_path("icons/Fullmetal-Alchemist-256.png") %>')"></div></a></li>
+          <li><a href="#">第二階段進行中<div class="work-circle" style="background-image: url('<%= asset_path("icons/Hyouka-256.png") %>')"></div></a></li>
+          <li><a href="#">看進擊的巨人#12<div class="work-circle" style="background-image: url('<%= asset_path("icons/One-Piece-anime-256.png") %>')"></div></a></li>
+          <li><a href="#">8點開會<div class="work-circle" style="background-image: url('<%= asset_path("icons/Naruto-256.png") %>')"></div></a></li>
+          <li><a href="#">測試<div class="work-circle" style="background-image: url('<%= asset_path("icons/BLEACH-anime-256.png") %>')"></div></a></li>
         </ul>
       </div>
 
     </aside>
 
     <aside class="aside2">
-      <h2>Conversation <i class="icon-comments icon-large"></i></h2>
+      <h2>WORK or DIE <i class="icon-coffee icon-large"></i></h2>
 
-      <div class="workshop-circle" style="background-image: url('/assets/icons/Fullmetal-Alchemist-256.png')"></div>
-      <div class="workshop-circle" style="background-image: url('/assets/icons/Hyouka-256.png')"></div>
-      <div class="workshop-circle" style="background-image: url('/assets/icons/One-Piece-anime-256.png')"></div>
-      <div class="workshop-circle" style="background-image: url('/assets/icons/Naruto-256.png')"></div>
-      <div class="workshop-circle" style="background-image: url('/assets/icons/BLEACH-anime-256.png')"></div>
-      <div class="workshop-circle" style="background-image: url('/assets/icons/Amnesia-anime-256.png')"></div>
+      <h3>#Project1 STAGE</h3>
+        <ul class="project-status">
+          <li>
+            <div class="progress progress-striped active">
+              <div class="bar bar-success" style="width: 12%;"></div>
+              <div class="bar bar-warning" style="width: 30%;"></div>
+              <div class="bar bar-danger" style="width: 40%;"></div>
+            </div>
 
+          </li>
+        </ul>
     </aside>
   </div>
   <footer class="footer1">
     <h1>Ourscal <small>A Social Calendar Only what You Want</small></h1>
   </footer>
   <footer class="footer2">
-    <p>Developer = lancetw aka Hsin-lin Cheng &lt;lancetw@gmail.com&gt;</p>
-    <p>DELIVERWORK @ 2013_Summer</p>
+    <ul class="nav nav-pills .btn-large">
+      <li class="active"><a href="#">@NOW</a></li>
+      <li><a href="#">@PAST</a></li>
+      <li><a href="#">@FUTURE</a></li>
+    </ul>
   </footer>
 
 

@@ -28,8 +28,8 @@
 @import url(http://fonts.googleapis.com/css?family=Titillium+Web);
 @import url(http://fonts.googleapis.com/css?family=Fjalla+One);
 
-$bg-url: '/assets/bg/zigzag.png';
-$bg2-url: '/assets/bg/ticks.png';
+$bg-url: image-url('bg/zigzag.png');
+$bg2-url: image-url('bg/ticks.png');
 
 body {
     font-family: 'Titillium Web', sans-serif;
@@ -43,6 +43,7 @@ a:hover {
 
 table.ourscal {
     width: 100%;
+    opacity: 0;
 }
 
 table.ourscal th {
@@ -51,7 +52,6 @@ table.ourscal th {
 }
 
 table.ourscal td {
-    height: 42px;
     width: 14.28%;
 }
 
@@ -66,7 +66,13 @@ table.ourscal td > div {
 
 table.ourscal td > div:hover {
     background-color: white;
-    border: 2px dashed #ccc;
+    border: 2px solid #eee;
+
+}
+
+table.ourscal .day > div {
+    width: 34px;
+    height: 34px;
 }
 
 table.ourscal .day.today > div {
@@ -75,7 +81,7 @@ table.ourscal .day.today > div {
 }
 table.ourscal .day.not-current-month > div {
     background: #fff;
-    color: #fff;
+    color: #ddd;
 }
 
 table.ourscal th:first-child {
@@ -88,7 +94,7 @@ table.ourscal th:last-child {
 
 .container {
     $zen-column-count: 4;
-    $zen-gutter-width: 10px;
+    $zen-gutter-width: 0;
     @include zen-grid-container;
 
     width: 100%;
@@ -126,11 +132,24 @@ table.ourscal th:last-child {
     background-color: #eee;
     background-image: url($bg2-url);
 
-    min-height: 3600px;
+    min-height: 720px;
+}
+
+@media (max-width: 979px) and (orientation : portrait) {
+    .aside1 {
+        min-height: 540px;
+    }
+}
+
+@media (max-width: 979px) and (orientation : landscape) {
+    .aside1 {
+        min-height: 720px;
+    }
 }
 
 .aside1 h2 {
     font-size: 20px;
+    padding-left: 10px;
 }
 
 .content {
@@ -138,13 +157,19 @@ table.ourscal th:last-child {
     @include zen-grid-item(2, 2);
 
     min-height: 200px;
+    padding-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+
+    overflow: auto;
+
 }
 
 .aside2 {
     @include zen-grid-item(1, 4);
     @include zen-nested-container();
 
-    position: absolute;
+    position: fixed;
     bottom: 0;
     color: #ddd;
     background-color: #333;
@@ -155,13 +180,18 @@ table.ourscal th:last-child {
 }
 
 .aside2 h2 {
-    font-size: 32px;
+    font-size: 26px;
     margin-top: 7px;
     padding-left: 20px;
     color: #666;
     text-shadow: 0px 1px 1px #4d4d4d;
     white-space: nowrap;
 }
+
+.aside2 h3 {
+    text-align: center;
+}
+
 
 footer {
     background-color: #333;
@@ -173,8 +203,7 @@ footer {
 .footer1 {
     @include zen-clear();
     @include zen-grid-item(1, 1);
-
-    position: absolute;
+    position: fixed;
     bottom: 0;
     padding-top: 8px;
 }
@@ -183,8 +212,7 @@ footer {
     @include zen-clear();
     @include zen-grid-item(1, 2);
     width: 51%;
-
-    position: absolute;
+    position: fixed;
     bottom: 0;
     padding-top: 20px;
 }
@@ -239,37 +267,63 @@ footer {
 
 #helveti-list {
 
+    h2 {
+        margin-bottom: 0;
+    }
+
     ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
     }
 
     li {
-      font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
-      border-bottom: 1px solid #ccc;
+          font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+          border-bottom: 1px solid #ccc;
     }
 
     li:last-child {
-      border: none;
+        border: none;
     }
 
     li a {
-      text-decoration: none;
-      color: #000;
-      display: block;
+        text-align: right;
+        text-decoration: none;
+        color: #000;
+        display: block;
+        padding-right: 10px;
+    }
 
-      -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
-      -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
-      -o-transition: font-size 0.3s ease, background-color 0.3s ease;
-      -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
-      transition: font-size 0.3s ease, background-color 0.3s ease;
+    li .work-circle {
+        margin-top: 10px;
     }
 
     li a:hover {
-      font-size: 30px;
-      background: #f6f6f6;
+        font-size: 30px;
+        background: rgba(0,0,0,.1);
+        .work-circle {
+            width: 72px;
+            height: 72px;
+        }
+
     }
+
+    .work-circle {
+        position: relative;
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        margin-right: 10px;
+        margin-left: 10px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-color: #ededed;
+        @include border-radius(99em);
+        border: 3px solid #fff;
+        box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
+    }
+
 
 }
 
@@ -283,24 +337,16 @@ footer {
        1px 1px 0 #aaa;
 }
 
-.workshop-circle {
-    position: relative;
-    display: inline-block;
-    width: 72px;
-    height: 72px;
-    margin: 8px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-color: #ededed;
-    @include border-radius(99em);
-    border: 3px solid #fff;
-    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
-}
-
 /* Large desktop */
 @media (min-width: 1200px) {
+    .aside1 {
+        min-height: 3600px;
+    }
 
+    table.ourscal .day > div {
+        width: 62px;
+        height: 62px;
+    }
 }
 
 /* Portrait tablet to landscape and desktop */
@@ -313,7 +359,6 @@ footer {
     .aside1 {
         @include zen-clear();
         @include zen-grid-item(3, 1);
-        min-height: 560px;
     }
 
     .content {
@@ -327,7 +372,7 @@ footer {
     }
 
     .aside2 h2 {
-        font-size: 26px;
+        font-size: 20px;
     }
 
     footer {
@@ -338,13 +383,11 @@ footer {
         position: fixed;
         bottom: 0;
         padding-top: 0;
-        height: 80px;
     }
 
     .footer2 {
         position: fixed;
         bottom: 0;
-        height: 80px;
     }
 
     #personal-work {
@@ -354,6 +397,18 @@ footer {
     #helveti-list {
         @include zen-grid-item(2, 3);
     }
+
+    table.ourscal .day > div {
+        width: 46px;
+        height: 46px;
+    }
+
+}
+
+ul.project-status {
+    list-style-type: none;
+    margin-left: 24px;
+    margin-right: 24px;
 }
 
 /* Landscape phone to portrait tablet */
@@ -380,8 +435,6 @@ footer {
     .aside1 {
         @include zen-clear();
         @include zen-grid-item(1, 1);
-
-        min-height: 320px;
     }
 
     .content {
@@ -397,13 +450,12 @@ footer {
         bottom: auto;
 
         max-height: 400px;
-        margin-bottom: 80px;
+
     }
 
     footer {
         background-color: #333;
         padding-top: 0;
-        min-height: 80px;
         z-index: 20;
     }
 
@@ -411,10 +463,9 @@ footer {
         @include zen-clear();
         @include zen-grid-item(1, 1);
 
-        position: fixed;
-        bottom: 0;
+        position: relative;
+        bottom: auto;
         padding-top: 0;
-        height: 80px;
     }
 
     .footer2 {
@@ -423,7 +474,38 @@ footer {
 
         display: none;
     }
+
+    table.ourscal .day > div {
+        width: 68px;
+        height: 68px;
+    }
 }
 
 /* Landscape phones and down */
-@media (max-width: 480px) { }
+@media (max-width: 480px) {
+
+    .cal-box {
+        min-height: 340px;
+    }
+
+    table.ourscal td > div {
+        padding: 7px;
+        margin: 2px;
+    }
+
+    .aside2 {
+        margin-bottom: 0;
+    }
+
+    table.ourscal .day > div {
+        width: 28px;
+        height: 28px;
+    }
+
+}
+
+@media (max-width: 480px) and (orientation: landscape) {
+    .aside1 {
+        min-height: 480px;
+    }
+}

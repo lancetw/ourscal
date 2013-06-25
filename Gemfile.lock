@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/RyanScottLewis/jquery-cookie-rails.git
+  revision: dd66bfd0a749ac0b448720441cc9ac8cdd9bb240
+  ref: dd66bfd0a749ac0b448720441cc9ac8cdd9bb240
+  specs:
+    jquery-cookie-rails (1.3.1)
+      railties (>= 3.2.0, < 5.0)
+
+GIT
   remote: git://github.com/milgner/compass-rails.git
   revision: 1749c06f15dc4b058427e7969810457213647fb8
   ref: 1749c06f15dc4b058427e7969810457213647fb8
@@ -86,6 +94,7 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.0)
+    kgio (2.8.0)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -121,6 +130,7 @@ GEM
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (>= 0.17.0, < 2.0)
+    raindrops (0.11.0)
     rake (10.1.0)
     rdoc (3.12.2)
       json (~> 1.4)
@@ -156,26 +166,29 @@ GEM
     uglifier (2.1.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    unicorn (4.6.3)
+      kgio (~> 2.6)
+      rack
+      raindrops (~> 0.7)
     warden (1.2.1)
       rack (>= 1.0)
     zen-grids (1.4)
       sass (>= 3.1)
-    zurb-foundation (4.0.9)
-      sass (>= 3.2.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  bcrypt-ruby
+  bcrypt-ruby (~> 3.0.0)
   bootstrap-sass
   capistrano
   coffee-rails (~> 4.0.0.beta1)
   compass-rails!
   devise!
   devise-i18n (~> 0.6.5)
-  font-awesome-rails
+  font-awesome-rails (~> 3.2.1.1)
   jbuilder (~> 1.0.1)
+  jquery-cookie-rails (~> 1.3.1)!
   jquery-rails (~> 3.0.1)
   modernizr-rails (~> 2.6.2)
   rails (= 4.0.0.beta1)
@@ -186,5 +199,5 @@ DEPENDENCIES
   sqlite3
   turbolinks
   uglifier (>= 1.0.3)
+  unicorn
   zen-grids
-  zurb-foundation (~> 4.0.9)
