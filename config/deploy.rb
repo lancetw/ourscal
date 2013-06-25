@@ -39,3 +39,5 @@ namespace :deploy do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
 end
+
+after "deploy:update_code", "deploy:copy_config_files"
