@@ -139,19 +139,20 @@ table.ourscal th:last-child {
 
 @media (max-width: 979px) and (orientation : portrait) {
     .aside1 {
-        min-height: 540px;
+        min-height: 510px;
     }
 }
 
 @media (max-width: 979px) and (orientation : landscape) {
     .aside1 {
-        min-height: 720px;
+        min-height: 510px;
     }
 }
 
 .aside1 h2 {
     font-size: 20px;
     padding-left: 10px;
+    padding-top: 10px;
 }
 
 .content {
@@ -320,7 +321,7 @@ footer {
     li a:hover {
         font-size: 30px;
         color: #333;
-
+        white-space: nowrap;
         background: rgba(0,0,0,.3);
         margin-top: -35px;
         line-height: 30px;
@@ -522,6 +523,10 @@ ul.project-status {
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
+
+    .aside1 {
+        min-height: 590px;
+    }
 
     .cal-box {
         min-height: 340px;
