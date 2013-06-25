@@ -1,4 +1,3 @@
-require "bundler/capistrano"
 
 set :application, "ourscal"
 set :repository,  "git@github.com:lancetw/ourscal.git"
