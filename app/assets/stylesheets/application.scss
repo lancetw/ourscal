@@ -118,7 +118,7 @@ table.ourscal th:last-child {
 }
 
 .aside0 {
-    @include zen-grid-item(3, 1);
+    @include zen-grid-item(3, 2);
 
     background-color: #333;
     background-image: url($bg-url);
@@ -126,10 +126,11 @@ table.ourscal th:last-child {
     color: #ddd;
     font-size: 13px;
     padding-top: 3px;
+    padding-left: 10px;
 }
 
 .aside1 {
-    @include zen-grid-item(1, 1);
+    @include zen-grid-item(1, 4);
 
     background-color: #eee;
     background-image: url($bg2-url);
@@ -157,12 +158,12 @@ table.ourscal th:last-child {
 
 .content {
     @include zen-clear();
-    @include zen-grid-item(2, 2);
+    @include zen-grid-item(2,2);
 
     min-height: 200px;
     padding-top: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
 
     overflow: auto;
 
@@ -173,7 +174,7 @@ $aside3-height: 81%;
 
 .aside2 {
     @include zen-clear();
-    @include zen-grid-item(1, 4);
+    @include zen-grid-item(1, 1);
 
     position: fixed;
     bottom: $aside3-height;
@@ -200,7 +201,7 @@ $aside3-height: 81%;
 }
 
 .aside3 {
-    @include zen-grid-item(1, 4);
+    @include zen-grid-item(1, 1);
 
     position: fixed;
     bottom: 0;
@@ -222,7 +223,7 @@ footer {
 
 .footer1 {
     @include zen-clear();
-    @include zen-grid-item(1, 1);
+    @include zen-grid-item(1, 4);
     position: fixed;
     bottom: 0;
     padding-top: 8px;
@@ -280,6 +281,8 @@ footer {
     box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
 
 }
+
+
 
 #personal-work {
     margin-top: -16px;
@@ -352,15 +355,112 @@ footer {
 
 }
 
-.knob {
-   color: white !important;
-   text-shadow:
-       3px 3px 0 #aaa,
-     -1px -1px 0 #aaa,
-      1px -1px 0 #aaa,
-      -1px 1px 0 #aaa,
-       1px 1px 0 #aaa;
+.chatbox {
+    margin-left: 10px;
+    margin-right: 10px;
+    max-height: 100%;
+
+    .info-bar {
+        display: none;
+    }
+
+    .chat-circle {
+        display: inline-block;
+        left: 0;
+        margin-top: -35px;
+        position: absolute;
+        width: 42px;
+        height: 42px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-color: #ededed;
+        @include border-radius(99em);
+        border: 3px solid #fff;
+        box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .msg {
+        @include user-select(text);
+        margin-left: 32px;
+    }
+
+    .alert-chat {
+        margin: 0;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        background-color: rgba(255,255,255,.1);
+        color: #999;
+        border: 0;
+        height: 100%;
+        box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
+
+        text-shadow: none;
+    }
+
+    .alert-chat:first-child {
+
+        .chat-circle {
+            z-index: 9999;
+            width: 72px;
+            height: 72px;
+        }
+
+        .msg {
+            @include user-select(text);
+            margin-left: 62px;
+        }
+
+        .info-bar {
+            display: block;
+            height: 20px;
+            background-color: rgba(0,0,0,.2);
+            margin-top: 5px;
+            margin-left: -15px;
+            margin-right: -36px;
+            padding-left: 72px;
+            color: #eee;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+
+    .alert-chat:hover {
+        height: auto;
+
+        .chat-circle {
+            z-index: 9999;
+            width: 72px;
+            height: 72px;
+        }
+
+        .msg {
+            @include user-select(text);
+            margin-left: 62px;
+        }
+
+        .info-bar {
+            display: block;
+            height: 20px;
+            background-color: rgba(0,0,0,.2);
+            margin-top: 5px;
+            margin-left: -15px;
+            margin-right: -36px;
+            padding-left: 72px;
+            color: #eee;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+
 }
+
+
+
+
+
 
 /* Large desktop */
 @media (min-width: 1200px) {
@@ -383,12 +483,12 @@ footer {
 
     .aside1 {
         @include zen-clear();
-        @include zen-grid-item(3, 1);
+        @include zen-grid-item(3, 2);
     }
 
     .content {
         @include zen-clear();
-        @include zen-grid-item(3, 1);
+        @include zen-grid-item(3, 2);
     }
 
     .aside2 {
@@ -519,6 +619,11 @@ ul.project-status {
         width: 68px;
         height: 68px;
     }
+
+    .chatbox {
+        max-height: 300px;
+    }
+
 }
 
 /* Landscape phones and down */
@@ -544,6 +649,11 @@ ul.project-status {
     table.ourscal .day > div {
         width: 28px;
         height: 28px;
+    }
+
+    .chatbox {
+        max-height: 400px;
+        overflow-y: auto;
     }
 
 }

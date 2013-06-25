@@ -5,7 +5,7 @@
 
 
     <aside class="aside0">
-      #DELIVERWORK
+      <a href="#">#DELIVERWORK</a>
     </aside>
 
     <article class="content">
@@ -51,7 +51,7 @@
     </aside>
 
     <aside class="aside2">
-      <h2>WORK or DIE <i class="icon-coffee icon-large"></i></h2>
+      <h2><i class="icon-coffee icon-large"></i><i class="icon-coffee icon-large"></i><i class="icon-coffee icon-large"></i></h2>
 
       <h3>#Project1 STAGE</h3>
         <ul class="project-status">
@@ -67,12 +67,14 @@
     </aside>
 
     <aside class="aside3">
-      <h3>Chat</h3>
-        <ul class="project-status">
-          <li>
-            test
-          </li>
-        </ul>
+      <h3>Message Box</h3>
+      <div class="chatbox">
+        <div class="alert alert-chat"><div class="msg">Hello Guys.</div><div class="chat-circle" style="background-image: url('<%= asset_path("icons/lancetw.jpg") %>')"></div><div class="info-bar">lancetw</div></div>
+        <div class="alert alert-chat"><div class="msg">Hello</div><div class="chat-circle" style="background-image: url('<%= asset_path("icons/BLEACH-anime-256.png") %>')"></div><div class="info-bar">John</div></div>
+        <div class="alert alert-chat"><div class="msg">Any body here?</div><div class="chat-circle" style="background-image: url('<%= asset_path("icons/Naruto-256.png") %>')"></div><div class="info-bar">Jerry</div></div>
+        <div class="alert alert-chat"><div class="msg">test</div><div class="chat-circle" style="background-image: url('<%= asset_path("icons/Hyouka-256.png") %>')"></div><div class="info-bar">Su</div></div>
+        <div class="alert alert-chat"><div class="msg">Hi</div><div class="chat-circle" style="background-image: url('<%= asset_path("icons/Dragonball-Goku-256.png") %>')"></div><div class="info-bar">Tom</div></div>
+      </div>
     </aside>
 
   </div>
@@ -82,8 +84,8 @@
   <footer class="footer2">
     <ul class="nav nav-pills .btn-large">
       <li class="active"><a href="#">@NOW</a></li>
-      <li><a href="#">@PAST</a></li>
-      <li><a href="#">@FUTURE</a></li>
+      <li class="active"><a href="#">@PAST</a></li>
+      <li class="active"><a href="#">@FUTURE</a></li>
     </ul>
   </footer>
 
