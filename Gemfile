@@ -50,3 +50,5 @@ gem 'capistrano', group: :development
 
 # To use debugger
 # gem 'debugger'
+
+gem 'rake'
