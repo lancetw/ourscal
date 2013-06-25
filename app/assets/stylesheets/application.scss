@@ -22,6 +22,7 @@
 @import "compass/css3/border-radius";
 @import "compass/css3/user-interface";
 @import "compass/css3/transform";
+@import "compass/css3/text-shadow";
 
 @import "font-awesome";
 @import url(http://fonts.googleapis.com/css?family=Orienta);
@@ -43,7 +44,7 @@ a:hover {
 
 table.ourscal {
     width: 100%;
-    opacity: 0;
+    opacity: 1;
 }
 
 table.ourscal th {
@@ -53,6 +54,7 @@ table.ourscal th {
 
 table.ourscal td {
     width: 14.28%;
+    opacity: 0;
 }
 
 table.ourscal td > div {
@@ -165,21 +167,25 @@ table.ourscal th:last-child {
 
 }
 
+$aside2-height: 20%;
+$aside3-height: 81%;
+
 .aside2 {
+    @include zen-clear();
     @include zen-grid-item(1, 4);
-    @include zen-nested-container();
 
     position: fixed;
-    bottom: 0;
+    bottom: $aside3-height;
     color: #ddd;
     background-color: #333;
     background-image: url($bg-url);
-    min-height: 100%;
+    min-height: $aside2-height;
+    max-height: $aside2-height;
 
     z-index: 90;
 }
 
-.aside2 h2 {
+.aside2 h2, .aside3 h2 {
     font-size: 26px;
     margin-top: 7px;
     padding-left: 20px;
@@ -188,10 +194,23 @@ table.ourscal th:last-child {
     white-space: nowrap;
 }
 
-.aside2 h3 {
+.aside2 h3, .aside3 h3 {
     text-align: center;
 }
 
+.aside3 {
+    @include zen-grid-item(1, 4);
+
+    position: fixed;
+    bottom: 0;
+    color: #ddd;
+    background-color: #333;
+    background-image: url($bg-url);
+    min-height: $aside3-height;
+    max-height: $aside3-height;
+
+    z-index: 90;
+}
 
 footer {
     background-color: #333;
@@ -300,12 +319,17 @@ footer {
 
     li a:hover {
         font-size: 30px;
-        background: rgba(0,0,0,.1);
+        color: #333;
+
+        background: rgba(0,0,0,.3);
+        margin-top: -35px;
+        line-height: 30px;
+        box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
+        @include text-shadow(0 0 2px #222);
         .work-circle {
             width: 72px;
             height: 72px;
         }
-
     }
 
     .work-circle {
@@ -368,11 +392,16 @@ footer {
 
     .aside2 {
         position: fixed;
-        bottom: 0;
+        bottom: $aside3-height;
     }
 
-    .aside2 h2 {
+    .aside2 h2, .aside2 h3 {
         font-size: 20px;
+    }
+
+    .aside3 {
+        position: fixed;
+        bottom: 0;
     }
 
     footer {
@@ -450,8 +479,18 @@ ul.project-status {
         bottom: auto;
 
         max-height: 400px;
-
     }
+
+    .aside3 {
+        @include zen-clear();
+        @include zen-grid-item(1, 1);
+
+        position: relative;
+        bottom: auto;
+
+        max-height: 400px;
+    }
+
 
     footer {
         background-color: #333;

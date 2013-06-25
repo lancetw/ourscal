@@ -20,10 +20,10 @@
 
 
 $(document).ready(function() {
-    $('.ourscal').delay(100).animate({"opacity": "1"}, 500);
+    $('table.ourscal td').delay(100).animate({"opacity": "1"}, 500);
 
     $(document).on('page:fetch', function() {
-        $('.ourscal').delay(100).animate({"opacity": "0"}, 500);
+        $('table.ourscal td').delay(100).animate({"opacity": "0"}, 500);
     });
 
     $(document).on('page:change', function() {
@@ -44,7 +44,7 @@ $(document).ready(function() {
             });
         }
 
-        $('.ourscal').delay(100).animate({"opacity": "1"}, 500);
+        $('table.ourscal td').delay(100).animate({"opacity": "1"}, 500);
 
     })
 
