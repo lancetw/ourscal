@@ -1,4 +1,7 @@
+require 'rvm/capistrano'
 require 'bundler/capistrano'
+
+set :rvm_type, :user
 
 set :application, "ourscal"
 set :repository,  "git@github.com:lancetw/ourscal.git"
