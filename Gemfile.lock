@@ -175,6 +175,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   bootstrap-sass
+  bundler
   capistrano
   coffee-rails (~> 4.0.0.beta1)
   compass-rails!
