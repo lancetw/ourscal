@@ -214,6 +214,19 @@ $aside3-height: 81%;
     z-index: 90;
 }
 
+.aside4 {
+    @include zen-grid-item(1, 4);
+
+    background-color: #eee;
+    background-image: url($bg2-url);
+
+    min-height: 720px;
+}
+
+.aside4 h2 {
+    padding-left: 10px;
+}
+
 footer {
     background-color: #333;
     min-height: 100px;
@@ -301,8 +314,8 @@ footer {
     }
 
     li {
-          font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
-          border-bottom: 1px solid #ccc;
+        font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+        border-bottom: 1px solid #ccc;
     }
 
     li:last-child {

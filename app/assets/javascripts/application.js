@@ -57,6 +57,11 @@ $(document).ready(function() {
         $('table.ourscal td.today').find('div').css('background-color', '#fff');
 
         $(this).find('div').css('background-color', '#666');
+
+
+        // open day work mode
+        $('.aside1').hide();
+
     });
 
     $(document).on('click', '.day.not-current-month', function(event) {
