@@ -1,3 +1,5 @@
+require "bundler/capistrano"
+
 set :application, "ourscal"
 set :repository,  "git@github.com:lancetw/ourscal.git"
 
@@ -52,3 +54,4 @@ end
 
 after "deploy:update_code", "deploy:copy_config_files"
 # after "deploy:finalize_update", "deploy:update_symlink"
+
