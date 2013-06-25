@@ -51,12 +51,12 @@ $(document).ready(function() {
      $(document).on('click', '.day', function(event) {
         var day = $(this).text();
         $.cookie('s_day', day);
-        $('table.ourscal td').not('.not-current-month').each(function() {
+        $('table.ourscal td').not('.not-current-month').not('.today').each(function() {
             $(this).find('div').css('background-color', '#eee');
         });
+        $('table.ourscal td.today').find('div').css('background-color', '#fff');
 
         $(this).find('div').css('background-color', '#666');
-
     });
 
     $(document).on('click', '.day.not-current-month', function(event) {
