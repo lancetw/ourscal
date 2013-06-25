@@ -52,3 +52,4 @@ gem 'capistrano', group: :development
 # gem 'debugger'
 
 gem 'rake'
+gem 'bundler'
