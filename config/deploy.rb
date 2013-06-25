@@ -15,8 +15,8 @@ role :app, "deliverwork.com"                          # This may be the same as 
 role :db,  "deliverwork.com", :primary => true # This is where Rails migrations will run
 role :db,  "deliverwork.com"
 
-set :user, "root"
-set :deploy_to, "/home/deliverwork/ourscal"
+set :user, "ourscal"
+set :deploy_to, "/home/ourscal"
 set :deploy_via, :remote_cache
 set :use_sudo, false
 set :deploy_env, "production"
