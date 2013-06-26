@@ -1,5 +1,5 @@
+require 'rvm/capistrano'
 require 'bundler/capistrano'
-
 
 set :rvm_type, :user
 
