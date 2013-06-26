@@ -23,8 +23,8 @@
 @import url(http://fonts.googleapis.com/css?family=Titillium+Web);
 @import url(http://fonts.googleapis.com/css?family=Fjalla+One);
 
-$bg-url: url('/assets/bg/zigzag.png');
-$bg2-url: url('/assets/bg/ticks.png');
+$bg-url: image-url('/assets/bg/zigzag.png');
+$bg2-url: image-url('/assets/bg/ticks.png');
 
 body {
     font-family: 'Titillium Web', sans-serif;
