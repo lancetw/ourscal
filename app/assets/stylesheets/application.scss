@@ -35,7 +35,6 @@ $bg2-url: image-url('/assets/bg/ticks.png');
 body {
     font-family: 'Titillium Web', sans-serif;
     @include user-select(none);
-    overflow: hidden;
 }
 
 a:hover {
@@ -118,6 +117,8 @@ table.ourscal th:last-child {
 }
 
 .aside0 {
+    display: none;
+
     @include zen-grid-item(3, 2);
 
     background-color: #333;
@@ -165,8 +166,6 @@ table.ourscal th:last-child {
     padding-left: 5px;
     padding-right: 5px;
 
-    overflow: auto;
-
 }
 
 $aside2-height: 20%;
@@ -188,7 +187,7 @@ $aside3-height: 81%;
 }
 
 .aside2 h2, .aside3 h2 {
-    font-size: 26px;
+    font-size: 24px;
     margin-top: 7px;
     padding-left: 20px;
     color: #666;
@@ -307,8 +306,6 @@ footer {
 
 }
 
-
-
 #personal-work {
     margin-top: -16px;
 }
@@ -408,6 +405,7 @@ footer {
     .msg {
         @include user-select(text);
         margin-left: 32px;
+        white-space: nowrap;
     }
 
     .alert-chat {
@@ -448,6 +446,7 @@ footer {
             font-weight: bold;
             font-size: 13px;
             line-height: 20px;
+            white-space: nowrap;
         }
     }
 
@@ -477,24 +476,20 @@ footer {
             font-weight: bold;
             font-size: 13px;
             line-height: 20px;
+            white-space: nowrap;
         }
     }
 
 }
 
-
-
-
-
-
 /* Large desktop */
 @media (min-width: 1200px) {
     .aside1 {
-        min-height: 3600px;
+        min-height: 820px;
     }
 
     .sidebar {
-        min-height: 3600px;
+        min-height: 820px;
     }
 
     table.ourscal .day > div {
@@ -532,7 +527,7 @@ footer {
     }
 
     .aside2 h2, .aside2 h3 {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .aside3 {
