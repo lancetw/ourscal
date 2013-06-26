@@ -29,7 +29,7 @@ $(document).ready(function() {
 
     $(document).on('page:change', function() {
 
-        if ($.cookie('s_direct') == 'next') {
+        if ($.cookie('s_direct') == 'previous') {
             $('table.ourscal td').each(function() {
                 if ( $(this).text() == $.cookie('s_day')) {
                     $(this).find('div').css('background-color', '#666');
@@ -88,12 +88,12 @@ $(document).ready(function() {
         $.cookie('s_day', day);
         if (day <= 15) {
             $.cookie('s_direct', 'previous');
-            var link = $('.previous-month').attr('href');
+            var link = $('.next-month').attr('href');
             Turbolinks.visit(link);
 
         } else {
             $.cookie('s_direct', 'next');
-            var link = $('.next-month').attr('href');
+            var link = $('.previous-month').attr('href');
             Turbolinks.visit(link);
         }
 
