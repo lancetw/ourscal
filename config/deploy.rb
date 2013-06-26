@@ -56,8 +56,5 @@ namespace :deploy do
 end
 
 after "deploy:update_code", "deploy:copy_config_files"
-after "deploy:finalize_update", "deploy:update_symlink"
+#after "deploy:finalize_update", "deploy:update_symlink"
 
-after "bundle:install" do
-  run "cd #{release_path}; RAILS_ENV=production bundle exec rake assets:precompile"
-end
