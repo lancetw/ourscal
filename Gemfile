@@ -16,6 +16,7 @@ gem 'spakit'
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 4.0.0.beta1'
+  gem 'compass'
   gem 'compass-rails', github: 'milgner/compass-rails', ref: '1749c06f15dc4b058427e7969810457213647fb8'
   gem 'coffee-rails', '~> 4.0.0.beta1'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
