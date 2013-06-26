@@ -17,7 +17,6 @@ gem 'spakit'
 group :assets do
   gem 'sass-rails',   '~> 4.0.0.beta1'
   gem 'compass-rails', github: 'milgner/compass-rails', ref: '1749c06f15dc4b058427e7969810457213647fb8'
-  gem 'modernizr-rails',  '~> 2.6.2'
   gem 'coffee-rails', '~> 4.0.0.beta1'
 
   gem 'zen-grids'
@@ -27,6 +26,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'modernizr-rails',  '~> 2.6.2'
 gem 'bootstrap-sass'
 gem "font-awesome-rails", "~> 3.2.1.1"
 
