@@ -57,11 +57,10 @@ $(document).ready(function() {
         $('table.ourscal td.today').find('div').css('background-color', '#fff');
 
         $(this).find('div').css('background-color', '#666');
+    });
 
-
-        // open day work mode
+    $(document).on('click', '.day:not(.not-current-month)', function(event) {
         $('.aside1').hide();
-
     });
 
     $(document).on('click', '.day.not-current-month', function(event) {
@@ -79,7 +78,9 @@ $(document).ready(function() {
         }
     });
 
-
+    $(document).on('click', '.close_aside4', function(event) {
+        $('.aside1').show();
+    });
 
 });
 
