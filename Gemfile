@@ -26,6 +26,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'modernizr', '~> 2.6.2'
 gem 'modernizr-rails',  '~> 2.6.2'
 gem 'bootstrap-sass'
 gem "font-awesome-rails", "~> 3.2.1.1"
