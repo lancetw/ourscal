@@ -24,6 +24,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'zen-grids'
 gem 'modernizr', '~> 2.6.2'
 gem 'modernizr-rails',  '~> 2.6.2'
 gem 'bootstrap-sass'
