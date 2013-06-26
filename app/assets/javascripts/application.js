@@ -56,6 +56,7 @@ $(document).ready(function() {
             $(this).find('div').css('background-color', '#eee');
         });
         $('table.ourscal td.today').find('div').css('background-color', '#fff');
+        $('table.ourscal td.not-current-month').find('div').css('background-color', '#fff');
 
         $(this).find('div').css('background-color', '#666');
 
@@ -63,6 +64,8 @@ $(document).ready(function() {
     });
 
     $(document).on('click', '.day:not(.not-current-month)', function(event) {
+        var day = $(this).text();
+        $.cookie('s_day', day);
         $('.sidebar h2 span').text($.cookie('s_day'));
 
         $('.sidebar').show();
@@ -83,7 +86,7 @@ $(document).ready(function() {
     $(document).on('click', '.day.not-current-month', function(event) {
         var day = $(this).text();
         $.cookie('s_day', day);
-        if (day >= 15) {
+        if (day <= 15) {
             $.cookie('s_direct', 'previous');
             var link = $('.previous-month').attr('href');
             Turbolinks.visit(link);
