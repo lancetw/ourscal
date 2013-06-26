@@ -481,7 +481,15 @@ footer {
             white-space: nowrap;
         }
     }
+}
 
+.links a {
+    color: #999;
+    padding: 3px;
+}
+
+.links a:hover {
+    color: #333;
 }
 
 /* Large desktop */
