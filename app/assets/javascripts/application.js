@@ -14,6 +14,7 @@
 //= require jquery.cookie
 //= require jquery_ujs
 //= require turbolinks
+//= require modernizr
 //= require_tree .
 //= require bootstrap
 
@@ -57,10 +58,26 @@ $(document).ready(function() {
         $('table.ourscal td.today').find('div').css('background-color', '#fff');
 
         $(this).find('div').css('background-color', '#666');
+
+        return false;
     });
 
     $(document).on('click', '.day:not(.not-current-month)', function(event) {
+        $('.sidebar h2 span').text($.cookie('s_day'));
+
+        $('.sidebar').show();
         $('.aside1').hide();
+
+        if ( Modernizr.mq('screen and (max-width:979px)') ) {
+            $('html, body').animate({ scrollTop: $(document).height() }, 'slow');
+        }
+
+        if ( Modernizr.mq('screen and (max-width:767px)') ) {
+            $('.aside2').hide();
+            $('.aside3').hide();
+        }
+
+        return false;
     });
 
     $(document).on('click', '.day.not-current-month', function(event) {
@@ -76,10 +93,24 @@ $(document).ready(function() {
             var link = $('.next-month').attr('href');
             Turbolinks.visit(link);
         }
+
+        return false;
     });
 
-    $(document).on('click', '.close_aside4', function(event) {
+    $(document).on('click', '.sidebar .close-action', function(event) {
         $('.aside1').show();
+        $('.sidebar').hide();
+
+        if ( Modernizr.mq('screen and (max-width:979px)') ) {
+            $('html, body').animate({ scrollTop: 0 }, 'slow');
+        }
+
+        if ( Modernizr.mq('screen and (max-width:767px)') ) {
+            $('.aside2').show();
+            $('.aside3').show();
+        }
+
+        return false;
     });
 
 });

@@ -35,15 +35,19 @@ $bg2-url: image-url('/assets/bg/ticks.png');
 body {
     font-family: 'Titillium Web', sans-serif;
     @include user-select(none);
+
 }
 
 a:hover {
     text-decoration: none;
 }
 
+.ourscal-nav {
+    text-align: center;
+}
+
 table.ourscal {
     width: 100%;
-    opacity: 1;
 }
 
 table.ourscal th {
@@ -139,13 +143,13 @@ table.ourscal th:last-child {
     min-height: 720px;
 }
 
-@media (max-width: 979px) and (orientation : portrait) {
+@media screen and (max-width: 979px) and (orientation : portrait) {
     .aside1 {
         min-height: 510px;
     }
 }
 
-@media (max-width: 979px) and (orientation : landscape) {
+@media screen and (max-width: 979px) and (orientation : landscape) {
     .aside1 {
         min-height: 510px;
     }
@@ -163,9 +167,6 @@ table.ourscal th:last-child {
 
     min-height: 200px;
     padding-top: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
-
 }
 
 $aside2-height: 20%;
@@ -222,21 +223,27 @@ $aside3-height: 81%;
     min-height: 720px;
 }
 
-@media (max-width: 979px) and (orientation : portrait) {
+@media screen and (max-width: 979px) and (orientation : portrait) {
     .sidebar {
         min-height: 200px;
     }
 }
 
-@media (max-width: 979px) and (orientation : landscape) {
+@media screen and (max-width: 979px) and (orientation : landscape) {
     .sidebar {
         min-height: 200px;
     }
+}
+
+.sidebar .side-header {
+    padding-right: 10px;
+    float: right;
 }
 
 .sidebar h2 {
     padding-left: 10px;
 }
+
 
 footer {
     background-color: #333;
@@ -278,6 +285,7 @@ footer {
 }
 
 .cal-box {
+    overflow-x: auto;
     min-height: 430px;
 }
 
@@ -483,7 +491,7 @@ footer {
 }
 
 /* Large desktop */
-@media (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
     .aside1 {
         min-height: 820px;
     }
@@ -499,10 +507,10 @@ footer {
 }
 
 /* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 979px) {
+@media screen and (min-width: 768px) and (max-width: 979px) {
 
     body {
-        overflow-y: auto;
+        overflow: auto;
     }
 
     .aside1 {
@@ -513,7 +521,8 @@ footer {
     .sidebar {
         @include zen-clear();
         @include zen-grid-item(3, 2);
-        min-height: 100px;
+        min-height: 320px;
+        display: none;
     }
 
     .content {
@@ -572,10 +581,11 @@ ul.project-status {
 }
 
 /* Landscape phone to portrait tablet */
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
 
     body {
-        overflow-y: auto;
+        overflow: auto;
+
     }
 
     .container {
@@ -585,6 +595,9 @@ ul.project-status {
 
         width: 100%;
         margin: 0 auto;
+    }
+    .sidebar {
+        display: none;
     }
 
     .aside0 {
@@ -662,7 +675,7 @@ ul.project-status {
 }
 
 /* Landscape phones and down */
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
 
     .aside1 {
         min-height: 590px;
@@ -697,7 +710,7 @@ ul.project-status {
 
 }
 
-@media (max-width: 480px) and (orientation: landscape) {
+@media screen and (max-width: 480px) and (orientation: landscape) {
     .aside1 {
         min-height: 480px;
     }
