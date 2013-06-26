@@ -57,12 +57,3 @@ end
 
 after "deploy:update_code", "deploy:copy_config_files"
 #after "deploy:finalize_update", "deploy:update_symlink"
-
-task :precompile, :roles => :web, :except => { :no_release => true } do
-  from = source.next_revision(current_revision)
-  if capture("cd #{shared_path}/cached-copy && git diff #{from}.. --stat | grep 'app/assets' | wc -l").to_i > 0
-    run %Q{cd #{latest_release} && #{rake} RAILS_ENV=#{Rubber.env} #{asset_env} assets:precompile:primary}
-  else
-    logger.info "Skipping asset pre-compilation because there were no asset changes"
-  end
-end
