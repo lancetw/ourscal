@@ -18,14 +18,13 @@ group :assets do
   gem 'sass-rails',   '~> 4.0.0.beta1'
   gem 'compass-rails', github: 'milgner/compass-rails', ref: '1749c06f15dc4b058427e7969810457213647fb8'
   gem 'coffee-rails', '~> 4.0.0.beta1'
-
-  gem 'zen-grids'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', platforms: :ruby
 
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'zen-grids'
 gem 'modernizr', '~> 2.6.2'
 gem 'modernizr-rails',  '~> 2.6.2'
 gem 'bootstrap-sass'
