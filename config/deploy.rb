@@ -48,6 +48,11 @@ namespace :deploy do
     run "ln -s #{shared_path}/public/system #{current_path}/public/system"
   end
 
+  task :run_migrations, :roles => :db do
+    puts "RUNNING DB MIGRATIONS"
+    run "cd #{current_path}; rake db:migrate RAILS_ENV=#{rails_env}"
+  end
+
   task :start do ; end
   task :stop do ; end
   task :restart, :roles => :app, :except => { :no_release => true } do
