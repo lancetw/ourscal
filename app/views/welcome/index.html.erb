@@ -12,14 +12,21 @@
 
       <div class="cal-box">
       <%= calendar @events, {:prev_text=>raw('<i class="icon-circle-arrow-left icon-large"></i>'), :next_text=>raw('<i class="icon-circle-arrow-right icon-large"></i>'), class: 'ourscal'} do |event| %>
-        <div><%= link_to event.title, event %></div>
+        <div>
+        <%= link_to events_date_path(Date.today), :remote => true, "data-type" => "script", "class" => "cal-cell" do %>
+          <span class="badge badge-info"><i class="icon-tag"></i></span>
+        <% end %>
+        </div>
       <% end %>
       </div>
 
     </article>
 
-    <aside class="sidebar" data-no-turbolink>
-      <div class="side-header"><a href="#" class="close-action icon-4x"><i class="icon-check"></i></a></div>
+    <aside id="sidebar" class="sidebar" data-no-turbolink>
+      <div class="side-header">
+        <a href="#" class="close-action"><i class="icon-check icon-4x"></i></a>
+      </div>
+
       <div id="work-list">
         <h2>Tasks@<span class="number"></span></h2>
         <ul>
@@ -37,22 +44,18 @@
 
     </aside>
 
+    <aside class="sidebar-pop" data-no-turbolink>
+    </aside>
+
     <aside class="aside1">
-      <div id="personal-work">
-        <h2><i class="icon-laptop icon-large"></i>WHOAMI</h2>
-        <div class="business-card-holder">
-          <div class="business-card" href="#balazs">
-            <h5>Hsin-lin Cheng</h5>
-            <div class="title">web developer</div>
-            <div class="email">lancetw@gmail.com</div>
-            <div class="links">
-              <a target="_blank" href="https://www.facebook.com/lancetw"><i class="icon-facebook-sign icon-2x"></a></i>
-              <a target="_blank" href="http://twitter.com/lancetw"><i class="icon-twitter-sign icon-2x"></a></i>
-              <a target="_blank" href="http://gplus.to/lancetw"><i class="icon-google-plus-sign icon-2x"></a></i>
-              <a target="_blank" href="http://github.com/lancetw"><i class="icon-github icon-2x"></a></i>
-            </div>
-            <figure><div class="personal-circle" style="background-image: url('<%= asset_path("icons/lancetw.jpg") %>')"></div></figure>
-          </div>
+
+      <div id="pdca-work">
+        <h2 style="color:green"><i class="icon-laptop icon-large"></i> Online</h2>
+        <div id="pdca-btns" class="btn-group">
+          <%= link_to 'Plan', new_event_path, :remote => true, "data-type" => "script", "class" => "btn btn-large" %>
+          <button class="btn btn-large">Do</button>
+          <button class="btn btn-large">Check</button>
+          <button class="btn btn-large">Action</button>
         </div>
       </div>
 
@@ -77,15 +80,13 @@
           <li>
             <div class="progress">
               <div class="bar bar-success" style="width: 12%;"></div>
-              <div class="bar bar-warning" style="width: 30%;"></div>
-              <div class="bar bar-danger" style="width: 40%;"></div>
             </div>
 
           </li>
         </ul>
     </aside>
 
-    <aside class="aside3">
+    <aside class="aside3" data-no-turbolink>
       <h3>Message Box</h3>
       <div class="chatbox">
         <div class="alert alert-chat"><div class="msg">Hello Guys.</div><div class="chat-circle" style="background-image: url('<%= asset_path("icons/lancetw.jpg") %>')"></div><div class="info-bar">lancetw@5分鐘前</div></div>
@@ -100,6 +101,25 @@
         <div class="alert alert-chat"><div class="msg">中文測試</div><div class="chat-circle" style="background-image: url('<%= asset_path("icons/lancetw.jpg") %>')"></div><div class="info-bar">lancetw@6天前</div></div>
 
       </div>
+
+      <div id="whomai">
+        <h3>WHOAMI</h3>
+        <div class="business-card-holder">
+          <div class="business-card" href="#lancetw">
+            <h5>Hsin-lin Cheng</h5>
+            <div class="title">web developer</div>
+            <div class="email">lancetw@gmail.com</div>
+            <div class="links">
+              <a target="_blank" href="https://www.facebook.com/lancetw"><i class="icon-facebook-sign icon-2x"></a></i>
+              <a target="_blank" href="http://twitter.com/lancetw"><i class="icon-twitter-sign icon-2x"></a></i>
+              <a target="_blank" href="http://gplus.to/lancetw"><i class="icon-google-plus-sign icon-2x"></a></i>
+              <a target="_blank" href="http://github.com/lancetw"><i class="icon-github icon-2x"></a></i>
+            </div>
+            <figure><div class="personal-circle" style="background-image: url('<%= asset_path("icons/lancetw.jpg") %>')"></div></figure>
+          </div>
+        </div>
+      </div>
+
 
     </aside>
 

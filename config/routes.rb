@@ -2,8 +2,14 @@ Ourscal::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+resources :events
+
   # You can have the root of your site routed with "root"
 root to: 'welcome#index'
+
+get 'events/date/:date' => "events#date",
+      :constraints => { :date => /\d{4}-\d{2}-\d{2}/ },
+      :as => "events_date"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

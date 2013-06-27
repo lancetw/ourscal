@@ -7,7 +7,7 @@ Bundler.require(*Rails.groups(assets: %w(development test)))
 
 module Ourscal
   class Application < Rails::Application
-    config.i18n.default_locale = "zh-TW"
+    config.i18n.default_locale = "en"
     config.time_zone = "Taipei"
 
     # Settings in config/environments/* take precedence over those specified here.

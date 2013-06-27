@@ -1,0 +1,17 @@
+<%= link_to 'Close', '#', "id" => "close-sidebar-pop", :class => "btn pull-right" %>
+
+<div class="sidebar-pop-content">
+<h2><i class="icon-laptop icon-large"></i> Plan</h2>
+
+<%= simple_form_for @event do |f| %>
+<%= f.input :name, :input_html => { :class => "input-xlarge"} %>
+<%= f.input :description, :input_html => { :class => "input-xlarge"} %>
+<%= f.input :start_time, :input_html => { :class => "input-xlarge"} %>
+
+<div class="form-actions">
+<%= f.submit "Save", :disable_with => 'Save...', :class => "btn btn-primary btn-large" %>
+</div>
+<% end %>
+
+</div>
+

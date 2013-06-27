@@ -25,6 +25,7 @@
 
 $bg-url: image-url('/assets/bg/zigzag.png');
 $bg2-url: image-url('/assets/bg/ticks.png');
+$bg3-url: image-url('/assets/bg/noisy_grid.png');
 
 body {
     font-family: 'Titillium Web', sans-serif;
@@ -91,6 +92,19 @@ table.ourscal th:last-child {
     color: green;
 }
 
+table.ourscal td.day .day_number {
+    font-size: 18px;
+}
+
+table.ourscal td.day > div > div:not(.day_number) {
+    display: inline-block;
+    font-size: 12px;
+    color: #3399ff;
+    line-height: 16px;
+    margin: 0;
+    padding: 0;
+}
+
 .container {
     $zen-column-count: 4;
     $zen-gutter-width: 0;
@@ -135,6 +149,8 @@ table.ourscal th:last-child {
     background-image: $bg2-url;
 
     min-height: 720px;
+
+    box-shadow: rgba(74, 74, 74, 0.25) 0 0 5px 0;
 }
 
 @media screen and (max-width: 979px) and (orientation : portrait) {
@@ -161,6 +177,7 @@ table.ourscal th:last-child {
 
     min-height: 200px;
     padding-top: 5px;
+
 }
 
 $aside2-height: 20%;
@@ -208,23 +225,27 @@ $aside3-height: 81%;
     z-index: 90;
 }
 
-.sidebar {
+.sidebar, .sidebar-pop {
     @include zen-grid-item(1, 4);
 
     background-color: #eee;
-    background-image: url($bg2-url);
+    background-image: $bg3-url;
 
     min-height: 720px;
+
+    display: none;
+
+    box-shadow: rgba(74, 74, 74, 0.25) 0 0 5px 0;
 }
 
 @media screen and (max-width: 979px) and (orientation : portrait) {
-    .sidebar {
+    .sidebar, .sidebar-pop  {
         min-height: 200px;
     }
 }
 
 @media screen and (max-width: 979px) and (orientation : landscape) {
-    .sidebar {
+    .sidebar, .sidebar-pop {
         min-height: 200px;
     }
 }
@@ -238,6 +259,19 @@ $aside3-height: 81%;
     padding-left: 10px;
 }
 
+.sidebar-pop-content h2 {
+    margin-left: 10px;
+}
+
+.sidebar-pop-content .input {
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+#close-sidebar-pop {
+    margin-top: 5px;
+    margin-right: 5px;
+}
 
 footer {
     background-color: #333;
@@ -289,6 +323,12 @@ footer {
     font-family: 'Fjalla One', sans-serif;
 }
 
+.cal-cell {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
 .cal-nav {
     @include user-select(none);
 }
@@ -308,8 +348,8 @@ footer {
 
 }
 
-#personal-work {
-    margin-top: -16px;
+#whomai {
+    margin-top: 16px;
 }
 
 #helveti-list {
@@ -421,9 +461,13 @@ footer {
         box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
 
         text-shadow: none;
+
+        display: none;
     }
 
     .alert-chat:first-child {
+        cursor: pointer;
+        display: block;
 
         .chat-circle {
             z-index: 9999;
@@ -481,6 +525,19 @@ footer {
             white-space: nowrap;
         }
     }
+
+    @media (min-width: 1200px) {
+        .alert-chat {
+            min-width: 245px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .alert-chat {
+            min-width: 235px;
+        }
+    }
+
 }
 
 .links a {
@@ -492,13 +549,18 @@ footer {
     color: #333;
 }
 
+.form-actions {
+    background-color: rgba(255,255,255,.35)
+}
+
+
 /* Large desktop */
 @media screen and (min-width: 1200px) {
     .aside1 {
         min-height: 820px;
     }
 
-    .sidebar {
+    .sidebar, .sidebar-pop {
         min-height: 820px;
     }
 
@@ -520,11 +582,12 @@ footer {
         @include zen-grid-item(3, 2);
     }
 
-    .sidebar {
+    .sidebar, .sidebar-pop {
         @include zen-clear();
         @include zen-grid-item(3, 2);
         min-height: 320px;
         display: none;
+        padding-bottom: 100px;
     }
 
     .content {
@@ -582,6 +645,11 @@ ul.project-status {
     margin-right: 24px;
 }
 
+#pdca-btns {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 /* Landscape phone to portrait tablet */
 @media screen and (max-width: 767px) {
 
@@ -598,7 +666,7 @@ ul.project-status {
         width: 100%;
         margin: 0 auto;
     }
-    .sidebar {
+    .sidebar, .sidebar-pop {
         display: none;
     }
 
@@ -612,7 +680,7 @@ ul.project-status {
         @include zen-grid-item(1, 1);
     }
 
-    .sidebar {
+    .sidebar, .sidebar-pop {
         @include zen-clear();
         @include zen-grid-item(1, 1);
     }
@@ -639,7 +707,7 @@ ul.project-status {
         position: relative;
         bottom: auto;
 
-        max-height: 400px;
+        min-height: 400px;
     }
 
 
@@ -670,9 +738,6 @@ ul.project-status {
         height: 68px;
     }
 
-    .chatbox {
-        max-height: 300px;
-    }
 
 }
 
@@ -683,7 +748,7 @@ ul.project-status {
         min-height: 590px;
     }
 
-    .sidebar {
+    .sidebar, .sidebar-pop {
         min-height: 100px;
     }
 
@@ -705,10 +770,6 @@ ul.project-status {
         height: 28px;
     }
 
-    .chatbox {
-        max-height: 400px;
-        overflow-y: auto;
-    }
 
 }
 
@@ -717,7 +778,7 @@ ul.project-status {
         min-height: 480px;
     }
 
-    .sidebar {
+    .sidebar, .sidebar-pop {
         min-height: 100px;
     }
 }

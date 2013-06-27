@@ -47,3 +47,6 @@ gem 'rvm-capistrano'
 
 gem 'rake'
 gem 'bundler'
+
+gem 'simple_form'
+gem 'country_select'

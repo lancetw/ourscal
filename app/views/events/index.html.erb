@@ -1,0 +1,5 @@
+<%= link_to("New event", new_event_path , :class => "btn btn-primary" ) %>
+
+<% @events.each do |event| %>
+<p><%= event.name %></p>
+<% end %>
